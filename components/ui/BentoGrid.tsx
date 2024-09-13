@@ -4,11 +4,14 @@ import { BackgroundGradientAnimation } from "./GradientBg";
 import { Globe } from "./Globe.tsx";
 import { GlobeDemo } from "./GridGlobe";
 import Lottie from "react-lottie";
-import { useState } from "react";
+import { useContext, useState } from "react";
 import animationData from "@/data/confetti.json";
 import MagicButton from "./MagicButton";
-import { IoCopyOutline } from "react-icons";
+// import { IoCopyOutline } from "react-icons";
+import { IoCopyOutline } from "react-icons/io5";
 
+import { static_texts } from "@/data";
+import { LanguageContext } from "@/app/layout";
 export const BentoGrid = ({
   className,
   children,
@@ -16,6 +19,7 @@ export const BentoGrid = ({
   className?: string;
   children?: React.ReactNode;
 }) => {
+  LanguageContext
   return (
     <div
       className={cn(
@@ -55,6 +59,8 @@ export const BentoGridItem = ({
     setCopied(true);
   };
 
+  const { language } = useContext(LanguageContext);
+
   return (
     <div
       className={cn(
@@ -92,7 +98,7 @@ export const BentoGridItem = ({
         </div>
         {id === 6 && (
           <BackgroundGradientAnimation>
-            <div className="absolute z-50 flex items-center justify-center text-white font-bold" />
+            <div className="absolute z-50 inset-0 flex items-center justify-center text-white font-bold px-4 pointer-events-none text-3xl text-center md:text-4l lg:text-7xl"></div>
           </BackgroundGradientAnimation>
         )}
         <div
@@ -112,7 +118,7 @@ export const BentoGridItem = ({
           {id === 3 && (
             <div className="flex gap-1 lg:gap-5 w-fit absolute -right-3 lg:-right-2">
               <div className="flex flex-col gap-3 lg:gap-8">
-                {["React.js", "Next.js", "TypeScript"].map((item) => (
+                {["React.js", "Next.js", "TypeScript", "iOS", "Android"].map((item) => (
                   <span
                     key={item}
                     className="py-2 lg:py-4 lg:px-3 px-3 text-xs lg:text-base opacity-50 lg:opacity-100 rounded-lg text-center bg-[#10132E]"
@@ -124,7 +130,7 @@ export const BentoGridItem = ({
               </div>
               <div className="flex flex-col gap-3 lg:gap-8">
                 <span className="py-4 px-3 rounded-lg text-center bg-[#10132e]" />
-                {["MongoDB", "AWS", "Swift"].map((item) => {
+                {["MongoDB", "AWS", "Swift", "Objective-C"].map((item) => {
                   return (
                     <span
                       key={item}
@@ -152,8 +158,11 @@ export const BentoGridItem = ({
                 />
               </div>
               <MagicButton
-                title={copied ? "Email copied" : "Copy my email"}
-                icon={<div />} // TODO - correct this line - we hae an issue with missing elemet '<IoCopyOutline />'
+                title={copied ?
+                  (language === "pl" ? static_texts[1].grid_email_copied[1] : static_texts[0].grid_email_copied[0]) :
+                  (language === "pl" ? static_texts[1].grid_email[1] : static_texts[0].grid_email)
+                }
+                icon={<IoCopyOutline />} // TODO - correct this line - we hae an issue with missing elemet '<IoCopyOutline />'
                 position="left"
                 theClasses="!bg-[#161a31"
                 handleClick={handleCopy}

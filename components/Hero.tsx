@@ -3,9 +3,19 @@ import { Spotlight } from "./ui/Spotlight";
 import { TextGenerateEffect } from "./ui/TextGenerateEffect";
 import MagicButton from "./ui/MagicButton";
 import { FaLocationArrow } from "react-icons/fa";
+import { LanguageProps, static_texts } from "@/data";
 
-const Hero = () => {
+
+// interface LanguageProps {
+//   language: string; // Properly define the type for language
+// }
+
+
+const Hero: React.FC<LanguageProps> = ({ language }) => {
   const words = "ala ma kota ale kot nie ma ali ale ale to wali";
+  console.log(`GK Hero ${language}`)
+  console.log(`Entries: ${language === 'en' ? static_texts[0].hero2[0] : static_texts[0].hero2[1]}`); // Should log the array ["Hi, Im your assistant", "Jestem Twoim asystentem"]
+
   return (
     <div className="pb-20 pt-36">
       <div>
@@ -26,18 +36,21 @@ const Hero = () => {
       <div className="flex justify-center">
         <div className="max-w-[89vw] md:max-w-2xl lg:max-w-[60vw] flex flex-col items-center justify-center">
           <h2 className="uppercase tracking-widest text-xs text-center text-blue-100 max-w-80 z-0 ">
-            Dynamic with NextJS
+            {language === "pl" ? static_texts[0].hero1[1] : static_texts[0].hero1[0]}
           </h2>
           <TextGenerateEffect
             className="text-center text-[40px] md:text-5xl lg:text-6xl"
-            words="Transforming concepts into seamless experiences"
+            words={language === "pl" ? static_texts[0].hero0[1] : static_texts[0].hero0[0]}
           />
           <p className="text-center md:tracking-wider mb-4 text-sm md:text lg:text-2xl z-0">
-            Hi, Im your assistant
+            {/* Hi, Im your assistant */}
+            {language === 'en' ? static_texts[0].hero2[0] : static_texts[0].hero2[1]}
+
+            {/* {language === "en" ? static_texts.hero.hero2[0] : static_texts.hero.hero2[0]} */}
           </p>
           <a href="#about">
             <MagicButton
-              title="Show my work"
+              title={language === 'en' ? static_texts[0].button[0] : static_texts[0].button[1]}
               icon={<FaLocationArrow />}
               position="right"
             />
