@@ -30,14 +30,14 @@ const Process = () => {
             </h1>
             <div className="my-20 flex flex-col lg:flex-row items-center justify-center gap-4">
                 <Card title={language === "pl" ? static_texts[5].phases_title[0][1] : static_texts[5].phases_title[0][0]}
-                    icon={<AceternityIcon order={language === "pl" ? static_texts[5].pahses_list[0][1] : static_texts[5].pahses_list[0][0]} />} description="lorem impsum">
+                    icon={<AceternityIcon order={language === "pl" ? static_texts[5].pahses_list[0][1] : static_texts[5].pahses_list[0][0]} />} description={language === "pl" ? static_texts[5].proj_stage1[1] : static_texts[5].proj_stage1[0]}>
                     <CanvasRevealEffect
                         animationSpeed={5.1}
                         containerClassName="bg-emerald-900"
                     />
                 </Card>
                 <Card title={language === "pl" ? static_texts[5].phases_title[1][1] : static_texts[5].phases_title[1][0]}
-                    icon={<AceternityIcon order={language === "pl" ? static_texts[5].pahses_list[1][1] : static_texts[5].pahses_list[1][0]} />} description="lorem ipsum 2">
+                    icon={<AceternityIcon order={language === "pl" ? static_texts[5].pahses_list[1][1] : static_texts[5].pahses_list[1][0]} />} description={language === "pl" ? static_texts[5].proj_stage2[1] : static_texts[5].proj_stage2[0]}>
                     <CanvasRevealEffect
                         animationSpeed={3}
                         containerClassName="bg-black"
@@ -50,7 +50,7 @@ const Process = () => {
 
                 </Card>
                 <Card title={language === "pl" ? static_texts[5].phases_title[2][1] : static_texts[5].phases_title[2][0]}
-                    icon={<AceternityIcon order={language === "pl" ? static_texts[5].pahses_list[2][1] : static_texts[5].pahses_list[2][0]} />} description="lorem ipsum 3">
+                    icon={<AceternityIcon order={language === "pl" ? static_texts[5].pahses_list[2][1] : static_texts[5].pahses_list[2][0]} />} description={language === "pl" ? static_texts[5].proj_stage3[1] : static_texts[5].proj_stage3[0]}>
                     <CanvasRevealEffect
                         animationSpeed={3}
                         containerClassName="bg-sky-600"

@@ -16,7 +16,7 @@ const Footer: React.FC<LanguageProps> = ({ language }) => {
     } else {
         text_field = static_texts[6].want_proj[0].split(' ');
         contact_text = static_texts[6].contact_proj[0];
-        letstalk_text = static_texts[6].lets_talk[0];
+        letstalk_text = static_texts[6].lets_talk[0] || '';
     }
 
     return (
@@ -29,7 +29,7 @@ const Footer: React.FC<LanguageProps> = ({ language }) => {
                     {`${text_field[0]} ${text_field[1]}`} <span className='text-purple'>{`${text_field[2] || ''}`}</span> {`${text_field[3] || ''}`}
                 </h1>
                 <p className='text-white-100 md:mt-10 my-5 text-center'>{contact_text}</p>
-                <a href="mailt:gabriel.kieruzel@protonmail.com">
+                <a href="mailto:gabriel.kieruzel@protonmail.com">
                     <MagicButton
                         title={letstalk_text}
                         icon={<FaLocationArrow />}
@@ -45,7 +45,10 @@ const Footer: React.FC<LanguageProps> = ({ language }) => {
                     {socialMedia.map((media, idx) => {
                         return (
                             <div key={idx} className='w-10 h-10 cursor-pointer flex justify-center items-center backdrop-filter backdrop-blur-lg saturate-150 bg-opacity-55 bg-black-200 rounded-lg border border-black-300'>
-                                <img src={media.img} alt="media_image" width={20} height={20} />
+                                <a href="https://www.linkedin.com/in/gabriel-kieruzel/" target="_blank">
+                                    <img src={media.img} alt="media_image" width={20} height={20} />
+                                </a>
+
                             </div>
                         )
                     })}

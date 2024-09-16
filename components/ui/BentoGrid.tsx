@@ -1,13 +1,11 @@
 "use client";
 import { cn } from "@/lib/utils";
 import { BackgroundGradientAnimation } from "./GradientBg";
-import { Globe } from "./Globe.tsx";
 import { GlobeDemo } from "./GridGlobe";
 import Lottie from "react-lottie";
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import animationData from "@/data/confetti.json";
 import MagicButton from "./MagicButton";
-// import { IoCopyOutline } from "react-icons";
 import { IoCopyOutline } from "react-icons/io5";
 
 import { static_texts } from "@/data";
@@ -54,12 +52,21 @@ export const BentoGridItem = ({
   spareImg?: string;
 }) => {
   const [copied, setCopied] = useState(false);
+  let timer: NodeJS.Timeout;
   const handleCopy = () => {
     navigator.clipboard.writeText("gabriel.kieruzel@protonmail.com");
     setCopied(true);
+    timer = setTimeout(() => {
+      setCopied(false);
+      clearTimeout(timer);
+    }, 5000)
   };
 
   const { language } = useContext(LanguageContext);
+
+  useEffect(() => {
+    clearTimeout(timer)
+  }, []);
 
   return (
     <div
@@ -106,19 +113,40 @@ export const BentoGridItem = ({
             titleClassName,
             "group-hover/bento: translate-x-2 transition duration-200 relative md:h-full min-h-40 flex flex-col px-5 p-5 lg:p-10",
           )}
+
         >
           <div className="font-sans font-normal text-neutral-600 text-xs dark:text-neutral-300">
             {description}
           </div>
-          <div className="font-sans font-bold text-lg lg:text-3xl max-w-96 z-10">
+          <div className="font-sans font-bold text-lg lg:text-3xl max-w-96 z-10 pb-10">
             {title}
           </div>
 
-          {id === 2 && <GlobeDemo />}
+          {/* {id === 2 && <GlobeDemo />} */}
+
           {id === 3 && (
-            <div className="flex gap-1 lg:gap-5 w-fit absolute -right-3 lg:-right-2">
-              <div className="flex flex-col gap-3 lg:gap-8">
-                {["React.js", "Next.js", "TypeScript", "iOS", "Android"].map((item) => (
+            <div className="grid grid-cols-2 gap-4 lg:gap-8 w-full -right-3 lg:-right-2" >
+              <div className="flex flex-col justify-between">
+                {static_texts[7].tech_1?.map((item) => (
+                  <span key={item} className="py-2 lg:py-4 px-3 text-xs lg:text-base opacity-50 lg:opacity-100 rounded-lg text-center bg-[#10132E]">{item}</span>
+                ))}
+              </div>
+              <div className="flex flex-col justify-between">
+                {"Kotlin" && (<span key={"Kotlin"} className="py-2 lg:py-4 px-3 text-xs lg:text-base opacity-50 lg:opacity-100 rounded-lg text-center bg-[#10132E]">{"Kotlin"}</span>)}
+                {static_texts[7].tech_2?.map((item) => (
+                  <span key={item} className="py-2 lg:py-4 px-3 text-xs lg:text-base opacity-50 lg:opacity-100 rounded-lg text-center bg-[#10132E]">{item}</span>
+                ))}
+              </div>
+            </div>
+          )}
+
+          {/* {id === 3 && (
+            // flex gap-1 lg:gap-5 w-fit absolute -right-3 lg:-right-2
+            <div className="flex gap-1 lg:gap-5 w-full  -right-3 lg:-right-2"
+              style={{ backgroundColor: 'yellow' }}
+            >
+              <div className="flex flex-col  gap-3 lg:gap-8">
+                {["Frontend", "iOS", "SQL", "Kotlin"].map((item) => (
                   <span
                     key={item}
                     className="py-2 lg:py-4 lg:px-3 px-3 text-xs lg:text-base opacity-50 lg:opacity-100 rounded-lg text-center bg-[#10132E]"
@@ -128,9 +156,9 @@ export const BentoGridItem = ({
                 ))}
                 <span className="py-4 px-3 rounded-lg text-center bg-[#10132e]" />
               </div>
-              <div className="flex flex-col gap-3 lg:gap-8">
-                <span className="py-4 px-3 rounded-lg text-center bg-[#10132e]" />
-                {["MongoDB", "AWS", "Swift", "Objective-C"].map((item) => {
+              <div className="flex flex-col gap-2 lg:gap-8">
+                <span className="py-4 px-1 rounded-lg text-center text-sm bg-[#10132e]" />
+                {["Android", "Bash", "Unix"].map((item) => {
                   return (
                     <span
                       key={item}
@@ -142,11 +170,11 @@ export const BentoGridItem = ({
                 })}
               </div>
             </div>
-          )}
+          )} */}
           {id === 6 && (
             <div className="mt-5 relative">
               <div className={`absolute -bottom-5 right-0`}>
-                <Lottie
+                {copied && <Lottie
                   options={{
                     loop: copied,
                     autoplay: copied,
@@ -155,12 +183,12 @@ export const BentoGridItem = ({
                       preserveAspectRatio: "xMidYMid slice",
                     },
                   }}
-                />
+                />}
               </div>
               <MagicButton
                 title={copied ?
-                  (language === "pl" ? static_texts[1].grid_email_copied[1] : static_texts[0].grid_email_copied[0]) :
-                  (language === "pl" ? static_texts[1].grid_email[1] : static_texts[0].grid_email)
+                  (language === "pl" ? (static_texts[1].grid_email_copied[1] as string) : (static_texts[0].grid_email_copied[0] as string)) :
+                  (language === "pl" ? (static_texts[1].grid_email[1] as string) : (static_texts[0].grid_email as string))
                 }
                 icon={<IoCopyOutline />} // TODO - correct this line - we hae an issue with missing elemet '<IoCopyOutline />'
                 position="left"

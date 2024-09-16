@@ -31,7 +31,6 @@ export default function RootLayout({
 
   useEffect(() => {
     const userLang = navigator.language || navigator.languages[0]; // Detect browser language
-    console.log(`User language: ${userLang}`);
 
     if (userLang.startsWith('pl')) {
       setLanguage('pl'); // Set to Polish
@@ -40,7 +39,6 @@ export default function RootLayout({
     }
   }, []);
 
-  console.log('GK language: ', language)
 
   return (
     <html lang='en'>

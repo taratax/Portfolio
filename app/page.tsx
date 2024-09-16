@@ -21,6 +21,7 @@ export default function Home() {
     { name: language === "pl" ? navItems[0].name[1] : navItems[0].name[0], link: navItems[0].link },
     { name: language === "pl" ? navItems[1].name[1] : navItems[1].name[0], link: navItems[1].link },
     { name: language === "pl" ? navItems[2].name[1] : navItems[2].name[0], link: navItems[2].link },
+    { name: language === "pl" ? navItems[3].name[1] : navItems[3].name[0], link: navItems[3].link },
   ];
 
 

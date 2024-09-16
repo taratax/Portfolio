@@ -18,21 +18,31 @@ const RecentProjects: React.FC<LanguageProps> = ({ language }) => {
     }
 
     return (
-        <div id='projects' className="py-20">
+
+
+
+        <div id='projects' className="py-20" >
             <h1 className="heading">
-                {`${text_field[0]} ${text_field[1]}`}
+                {`${text_field[0] || ''} ${text_field[1] || ''}`}
                 {' '}
                 <span className="text-purple">
-                    {`${text_field[2]} ${text_field[3]}`}
+                    {`${text_field[2] || ''} ${text_field[3] || ''}`}
                 </span>
             </h1>
-            <div className="flex flex-wrap items-center justify-center p-4 gap-x-24 gap-y-8 mt-10">
+            <div className="flex flex-wrap items-center justify-center p-4 gap-x-24 gap-y-8 mt-10"
+
+            >
                 {projects.map(({ id, title, des, img, iconLists, link }) => {
                     return (
                         <div key={id}
-                            className="sm:h-[41rem] h-[32rem] lg:min-h-[32.5rem] flex items-center justify-center sm:w-[570px] w-[80vw]" suppressHydrationWarning={true}>
-                            <PinContainer title={link} href={`${id === 1 || id === 2 ? link : ''}`}>
-                                <div className="relative flex items-center justify-center sm:w-[570px] w-[80vw] overflow-hidden sm:h-[40vh] h-[30vh] mb-10">
+                            className="sm:h-[41rem] h-[32rem] lg:min-h-[64.5rem] flex items-center justify-center sm:w-[570px] w-[80vw] " suppressHydrationWarning={true}
+
+                        >
+
+                            <PinContainer title={link} href={link} className="mb-50">
+                                <div className="relative flex items-center justify-center sm:w-[570px] w-[80vw] overflow-hidden sm:h-[40vh] h-[30vh] "
+
+                                >
                                     <div className="relative w-full h-full overflow-hidden lg:rounded-3xl bg-[#13162d]">
                                         <img src="/bg.png" alt="bg-img" />
                                     </div>
@@ -41,7 +51,7 @@ const RecentProjects: React.FC<LanguageProps> = ({ language }) => {
                                 <h1 className="font-bold lg:text-2xl md:text-xl text-base line-clamp-1">
                                     {title}
                                 </h1>
-                                <p className="lg:text-xl lg:font-normal font-light text-sm line-clamp-2">
+                                <p className="lg:text-xl lg:font-normal font-light text-sm line-clamp-4">
                                     {language === "pl" ? des[1] : des[0]}
                                 </p>
                                 <div className="flex items-center justify-between mt-7 mb-3">

@@ -1,6 +1,7 @@
 export const navItems = [
   { name: ["About", "O mnie"], link: "#about" },
   { name: ["Projects", "Projekty"], link: "#projects" },
+  { name: ["Experience", "Doświadczenie zawodowe"], link: "#experience" },
   { name: ["Contact", "Kontakt"], link: "#contact" },
 ];
 
@@ -29,7 +30,7 @@ export const gridItems = [
     id: 3,
     title: ["My tech stack", "Technologie"],
     description: "I constantly try to improve",
-    className: "lg:col-span-2 md:col-span-3 md:row-span-2",
+    className: "lg:col-span-2 md:col-span-3 md:row-span-4",
     imgClassName: "",
     titleClassName: "justify-center",
     img: "",
@@ -49,7 +50,7 @@ export const gridItems = [
   {
     id: 5,
     title: ["Currently building a JS decentralized chat app.", "Obecnie buduję zdecentralizowny chat."],
-    description: ["The Inside Scoop", "Co w środku"],
+    description: ["The Inside Scoop", "Co ciekawego"],
     className: "md:col-span-3 md:row-span-2",
     imgClassName: "absolute right-0 bottom-0 md:w-96 w-60",
     titleClassName: "justify-center md:justify-start lg:justify-center",
@@ -77,23 +78,41 @@ export const projects = [
     iconLists: ["/kotlin-icon.png", "/android.png"],
     link: "https://play.google.com/store/apps/details?id=pl.mmat.mmatcalculator&hl=pl",
   },
-
   {
     id: 2,
+    title: "MychatPWA",
+    des: ["Decentralized Chat App Our chat application operates on a peer-to-peer network using a publish-subscribe model.", "Czat, w fazie eksperymentlnej, oparty na sieci decentralizowanej. Aplikacja do komunikacji działa w środowisku peer-to-peer przy użyciu modelu publikuj-subskrybuj."],
+    img: "/mychat_chat.png",
+    iconLists: ["JS.png", "typescript-icon.svg"],
+    link: "https://mychatpwa.hopto.org",
+  },
+  {
+    id: 3,
+    title: "KTW",
+    des: ["Small offline oriented city guide for Katowice.", "Mała nie-onlineowa apka na telefony apple - wkrótce w app store."],
+    img: "/KTW_application.png",
+    iconLists: ["swift.png", "iphone.png", "/git.svg"],
+    link: "https://github.com/taratax/katoApp.git",
+  },
+
+  {
+    id: 4,
     title: "FullCourtTennis",
     des: ["FullCourtTennis was founded by former '81 Australian Open Singles Champion Brian Teacher, currently an ATP coach. With today's widespread access to technology, Brian wanted to make tennis coaching available and affordable to all. And so the FullCourtTennis app was born. Now tennis players of all levels, from all around the globe can connect directly with world-class tennis coaches to improve their game.", "FullCourtTennis was founded by former '81 Australian Open Singles Champion Brian Teacher, currently an ATP coach. With today's widespread access to technology, Brian wanted to make tennis coaching available and affordable to all. And so the FullCourtTennis app was born. Now tennis players of all levels, from all around the globe can connect directly with world-class tennis coaches to improve their game"],
     img: "/FullCourttennis.png",
-    iconLists: ["swift.png", "Objective-C.png", "apple-logo.png"],
-    link: "https://apps.apple.com/pl/app/full-court-tennis/id1563456530?l=pl",
+    iconLists: ["swift.png", "obj-c.png"],
+    link: "https://apps.apple.com/pl/app/full-court-tennis/id1563456530?l=pl"
+    // "https://apps.apple.com/pl/app/full-court-tennis/id1563456530?l=pl",
+    // "https://www.fullcourttennis.com"
   },
 
 ];
 
 export const static_texts = [
   {
-    hero0: ["Transforming concepts into seamless experiences", "Przekształcanie koncepcji w produkt"],
-    hero1: ["Dynamic with NextJS", "Dynamiczny projekt z NextJS"],
-    hero2: ["Hi, Im your assistant", "Jestem Twoim asystentem"],
+    hero0: ["Transforming concepts into seamless experiences", "Zamiana koncepcji w produkt"],
+    hero1: ["Dynamic with NextJS", "Dynamiczny z NextJS"],
+    hero2: ["Projects on time", "Projekty na czas"],
     button: ["Show my work", "Czym się zajmuję"]
   },
   {
@@ -101,8 +120,9 @@ export const static_texts = [
     grid_email_copied: ["Email copied", "Email skopiowany"]
   },
   {
-    proj_head: ["Projects participated and worked on", "Projekty z moim udziałem"],
-    proj_check: ["Check Live Site", "Sprawdź stronę projektu"]
+    proj_head: ["Projects participated and worked on", "Prace i projekty."],
+    proj_check: ["Check Live Site", "Sprawdź stronę projektu"],
+
 
   },
   {
@@ -112,15 +132,22 @@ export const static_texts = [
     experience_head: ["My work experience", "Doświadczenie zawodowe"]
   },
   {
-    approach_head: ["My approach", "Moje podejście"],
+    approach_head: ["My approach", "Podejście projektowe"],
     pahses_list: [["Phase 1", "Etap pierwszy"], ["Phase 2", "Etap drugi"], ["Phase 3", "Etap trzeci"]],
     phases_desc: [["", ""], ["", ""], ["", ""]],
-    phases_title: [["Analysis and strategy", "Analiza i strategia"], ["Implemenation and iteration", "Iteracje w implmentacji"], ["Support and maintenance", "Wsparcie i rozwój"]]
+    phases_title: [["Analysis and strategy", "Analiza i strategia"], ["Implemenation and iteration", "Iteracje w implmentacji"], ["Support and maintenance", "Wsparcie i rozwój"]],
+    proj_stage1: ["Requirements Discussion and Analysis", "Omówienie i analiza wymagań."],
+    proj_stage2: ["Development Phase, Regular Analysis and Feedback Sessions", "Projekt w budowie, analiza i spotkania iteracyjne."],
+    proj_stage3: ["Project Handover, Initial Support, Ongoing Assistance", "Oddanie projektu, początkowa opieka, dalsze wsparcie."],
   },
   {
     want_proj: ["Want to cooperate on new project ?", "Potrzebujesz projektu ?"],
-    contact_proj: ["Contact me and describe what you need", "Skontaktuj się z mną i powiedz czego potrzebujesz"],
+    contact_proj: ["Contact me and describe what you need", "Skontaktuj się ze mną i powiedz czego potrzebujesz"],
     lets_talk: ["lets talk", "Porozmawiajmy"]
+  },
+  {
+    tech_1: ["TypeScript", "JavaScript", "StoryBook", "React Testing Library", "iOS", "Swift", "Objective-C", "SQL", "MongoDB"],
+    tech_2: ["Android", "Bash", "Linux", "Unix", "Windows Powershell", "ETL", "Python"]
   },
 
 
@@ -129,34 +156,10 @@ export const static_texts = [
 export const testimonials = [
   {
     quote:
-      "Collaborating with Adrian was an absolute pleasure. His professionalism, promptness, and dedication to delivering exceptional results were evident throughout our project. Adrian's enthusiasm for every facet of development truly stands out. If you're seeking to elevate your website and elevate your brand, Adrian is the ideal partner.",
-    name: "Michael Johnson",
-    title: "Director of AlphaStream Technologies",
-  },
-  {
-    quote:
-      "Collaborating with Adrian was an absolute pleasure. His professionalism, promptness, and dedication to delivering exceptional results were evident throughout our project. Adrian's enthusiasm for every facet of development truly stands out. If you're seeking to elevate your website and elevate your brand, Adrian is the ideal partner.",
-    name: "Michael Johnson",
-    title: "Director of AlphaStream Technologies",
-  },
-  {
-    quote:
-      "Collaborating with Adrian was an absolute pleasure. His professionalism, promptness, and dedication to delivering exceptional results were evident throughout our project. Adrian's enthusiasm for every facet of development truly stands out. If you're seeking to elevate your website and elevate your brand, Adrian is the ideal partner.",
-    name: "Michael Johnson",
-    title: "Director of AlphaStream Technologies",
-  },
-  {
-    quote:
-      "Collaborating with Adrian was an absolute pleasure. His professionalism, promptness, and dedication to delivering exceptional results were evident throughout our project. Adrian's enthusiasm for every facet of development truly stands out. If you're seeking to elevate your website and elevate your brand, Adrian is the ideal partner.",
-    name: "Michael Johnson",
-    title: "Director of AlphaStream Technologies",
-  },
-  {
-    quote:
-      "Collaborating with Adrian was an absolute pleasure. His professionalism, promptness, and dedication to delivering exceptional results were evident throughout our project. Adrian's enthusiasm for every facet of development truly stands out. If you're seeking to elevate your website and elevate your brand, Adrian is the ideal partner.",
-    name: "Michael Johnson",
-    title: "Director of AlphaStream Technologies",
-  },
+      "",
+    name: "",
+    title: "",
+  }
 ];
 
 export const companies = [
@@ -173,7 +176,7 @@ export const workExperience = [
   {
     id: 1,
     title: ["Sql developer", "Sql developer"],
-    desc: ["Querying a large database systems in telecom companies with 1 milion plus records of data inside tables. ", "Przeglądanie dużych systemów baz danych w firmach telekomunikacyjnych z ponad 1 miliońem rekordami danych przechowywanych w tabelach."],
+    desc: ["Querying a large database systems in telecom companies with 1 milion plus records of data inside tables. ", "Przeglądanie dużych systemów baz danych w firmach telekomunikacyjnych z ponad milionem rekordów danych przechowywanych w tabelach."],
     className: "md:col-span-2",
     thumbnail: "/exp1.svg",
   },
@@ -201,12 +204,12 @@ export const workExperience = [
 ];
 
 export const socialMedia = [
+  // {
+  //   id: 1,
+  //   img: "/git.svg",
+  // },
   {
     id: 1,
-    img: "/git.svg",
-  },
-  {
-    id: 3,
     img: "/link.svg",
   },
 ];

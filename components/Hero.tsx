@@ -6,15 +6,9 @@ import { FaLocationArrow } from "react-icons/fa";
 import { LanguageProps, static_texts } from "@/data";
 
 
-// interface LanguageProps {
-//   language: string; // Properly define the type for language
-// }
-
 
 const Hero: React.FC<LanguageProps> = ({ language }) => {
   const words = "ala ma kota ale kot nie ma ali ale ale to wali";
-  console.log(`GK Hero ${language}`)
-  console.log(`Entries: ${language === 'en' ? static_texts[0].hero2[0] : static_texts[0].hero2[1]}`); // Should log the array ["Hi, Im your assistant", "Jestem Twoim asystentem"]
 
   return (
     <div className="pb-20 pt-36">
