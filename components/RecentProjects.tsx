@@ -18,10 +18,7 @@ const RecentProjects: React.FC<LanguageProps> = ({ language }) => {
     }
 
     return (
-
-
-
-        <div id='projects' className="py-20" >
+        <div id='projects' className="py-20">
             <h1 className="heading">
                 {`${text_field[0] || ''} ${text_field[1] || ''}`}
                 {' '}
