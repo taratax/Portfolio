@@ -102,8 +102,6 @@ export const projects = [
     img: "/FullCourttennis.png",
     iconLists: ["swift.png", "obj-c.png"],
     link: "https://apps.apple.com/pl/app/full-court-tennis/id1563456530?l=pl"
-    // "https://apps.apple.com/pl/app/full-court-tennis/id1563456530?l=pl",
-    // "https://www.fullcourttennis.com"
   },
 
 ];
@@ -204,10 +202,7 @@ export const workExperience = [
 ];
 
 export const socialMedia = [
-  // {
-  //   id: 1,
-  //   img: "/git.svg",
-  // },
+
   {
     id: 1,
     img: "/link.svg",

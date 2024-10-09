@@ -3,8 +3,8 @@ import React from "react";
 
 import { AnimatePresence, motion } from "framer-motion";
 import { CanvasRevealEffect } from "@/components/ui/CanvasRevealEffect";
-import { div } from "three/webgpu";
-import { workExperience, LanguageProps, static_texts } from '@/data'
+
+import { static_texts } from '@/data'
 import { LanguageContext } from "@/app/layout";
 import { useContext, useState } from "react";
 
@@ -12,7 +12,6 @@ const Process = () => {
     const { language } = useContext(LanguageContext);
 
     let text_field: string[] = [];
-
 
     if (language === "pl") {
         text_field = static_texts[5].approach_head[1].split(' ');

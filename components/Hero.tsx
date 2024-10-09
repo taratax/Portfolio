@@ -8,7 +8,6 @@ import { LanguageProps, static_texts } from "@/data";
 
 
 const Hero: React.FC<LanguageProps> = ({ language }) => {
-  const words = "ala ma kota ale kot nie ma ali ale ale to wali";
 
   return (
     <div className="pb-20 pt-36">
@@ -24,7 +23,6 @@ const Hero: React.FC<LanguageProps> = ({ language }) => {
         <Spotlight className='"top-28 left-80 h-[80vh] w-[50vw]' fill="blue" />
       </div>
       <div className="h-screen w-full dark:bg-black-100 bg-white  dark:bg-grid-white/[0.3] bg-grid-black/[0.2]  flex items-center justify-center absolute top-0 left-0 ">
-        {/* Radial gradient for the container to give a faded look */}
         <div className="absolute pointer-events-none inset-0 flex items-center justify-center dark:bg-black-100 bg-white [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)]"></div>
       </div>
       <div className="flex justify-center">
@@ -37,10 +35,7 @@ const Hero: React.FC<LanguageProps> = ({ language }) => {
             words={language === "pl" ? static_texts[0].hero0[1] : static_texts[0].hero0[0]}
           />
           <p className="text-center md:tracking-wider mb-4 text-sm md:text lg:text-2xl z-0">
-            {/* Hi, Im your assistant */}
             {language === 'en' ? static_texts[0].hero2[0] : static_texts[0].hero2[1]}
-
-            {/* {language === "en" ? static_texts.hero.hero2[0] : static_texts.hero.hero2[0]} */}
           </p>
           <a href="#about">
             <MagicButton

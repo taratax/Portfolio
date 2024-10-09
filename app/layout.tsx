@@ -5,14 +5,7 @@ import "./globals.css";
 import { ThemeProvider } from "./provider";
 import React, { createContext, useEffect, useState } from "react";
 
-const languages = ['en', 'pl'];
-
 const inter = Inter({ subsets: ["latin"] });
-
-// export const metadata: Metadata = {
-//   title: "Just my Project",
-//   description: "A NextJS project.",
-// };
 
 
 // Create a LanguageContext to provide language data to child components

@@ -35,7 +35,6 @@ export default function Home() {
         <Hero language={language} />
         <Grid language={language} />
         <RecentProjects language={language} />
-        {/* <Clients language={language} /> */}
         <Experience language={language} />
         <Process />
         <Footer language={language} />
